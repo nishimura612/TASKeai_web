@@ -8,11 +8,11 @@ gitコマンド,Github　Desktopどちらを利用してもらってもOK
 頑張ってググってください
 
 ## 2.基本的なvagrantコマンド
-'vagrant up （仮想マシンの起動）'
+`vagrant up （仮想マシンの起動）`
 
-'vagrant halt (仮想マシンの停止)'
+`vagrant halt (仮想マシンの停止)`
 
-'vagrant ssh　(仮想マシンに対して，sshログイン)'
+`vagrant ssh　(仮想マシンに対して，sshログイン)`
 
 基本的にこれだけしか使わないかも？
 
