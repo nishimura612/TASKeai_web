@@ -4,8 +4,8 @@
 	$gpioPort = 'gpio' . $gpioPortNum;
 
 	$gpioMode = 'out';
-	$gpioModeState = '/sys/class/gpio/gpio4/direction';
-	$gpioState = '/sys/class/gpio/gpio4/value';
+	$gpioModeState = '/sys/class/gpio/' . $gpioPort . '/direction';
+	$gpioState = '/sys/class/gpio/' . $gpioPort . '/value';
 
 	// gpioPort の初期化がされているかチェック
 	if(system('ls /sys/class/gpio | grep ' . $gpioPort) != $gpioPort){
