@@ -1,1 +1,3 @@
 *.vagrant
+*centos6.7.box
+*centos6.7_2.box
