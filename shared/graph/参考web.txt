@@ -1,0 +1,11 @@
+﻿chart.jsでドーナツ型グラフの中央にタイトルを載せたい
+
+https://teratail.com/questions/80278
+
+
+
+PHPからJavaScriptへの変数渡し
+
+http://agn.jp/blog/?p=2019
+
+
