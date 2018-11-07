@@ -1,83 +1,205 @@
-<!DOCTYPE html>
-<html lang="jp">
-
+<!doctype html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>TASKeai</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.png">
-  <link rel="stylesheet" src="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  　
- <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  　
-  <script src="js/sample.js"></script>
-  　
-  <script>
-    $(function () {
-        // button1 の click 時の処理
-        $('#button1').click(function () {
-          $('#area1').append($('#text1').val()).append('\n');
-        });
-    });  
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- 追加CSS -->
+<link rel="stylesheet" href="css/custom.css">
+<title>TASKeai</title>
 </head>
-
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
-              <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default btn-sm">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <h1>こんにちは2</h1>
-  <INPUT id="text1" type="text" value="jquery try" cols=40>
-  <button id="button1">OK</button>
-  </br></br>
-  <textarea id="area1" cols=40 rows=10></textarea>
-  <div class="progress progress-striped active">
-    <div class="progress-bar" style="width: 45%"></div>
+<!-- ヘッダー -->
+<header class="py-2">
+  <div class="container text-center">
+    <h1><a href="index.html"><img src="img/logo.png" alt="TASKeai" height="100"></a></h1>
   </div>
-
+</header>
+<!-- /ヘッダー -->
+<!-- ナビゲーションバー --><!-- /ナビゲーションバー -->
+<!-- メイン -->
+<main>
+  <!-- メインビジュアル --><!-- / メインビジュアル -->
+  <!-- コンテンツ01 --><!-- /コンテンツ01 -->
+  <!-- コンテンツ02 --><!-- /コンテンツ02 -->
+  <!-- コンテンツ03 -->
+  <div class="py-4">
+    <section id="menu">
+      <div class="container">
+        <h3 class="mb-3">Menu</h3>
+        <p>カフェ Mr. M COFFEEのメニューです。掲載していない季節限定メニューはMr. M COFFEEの
+          <a href="#">ブログ</a>にて紹介しています。</p>
+        <!-- タブ型ナビゲーション -->
+        <div class="nav nav-tabs" id="tab-menus" role="tablist">
+          <!-- タブ01 -->
+          <a class="nav-item nav-link active" id="tab-menu01" data-toggle="tab" href="#panel-menu01" role="tab" aria-controls="panel-menu01" aria-selected="true">一覧</a>
+          <!-- タブ02 -->
+          <a class="nav-item nav-link" id="tab-menu02" data-toggle="tab" href="#panel-menu02" role="tab" aria-controls="panel-menu02" aria-selected="false">グラフ</a>
+        </div>
+        <!-- /タブ型ナビゲーション -->
+        <!-- パネル -->
+        <div class="tab-content" id="panel-menus">
+          <!-- パネル01 -->
+          <div class="tab-pane fade show active border border-top-0" id="panel-menu01" role="tabpanel" aria-labelledby="tab-menu01">
+            <div class="row p-3">
+              <div class="col-md-7 order-md-2">
+                <h4>COFFEE</h4>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <th>M ブレンド</th>
+                      <td>390円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>アイスコーヒー</th>
+                      <td>430円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>ブラジルシングル</th>
+                      <td>430円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>エスプレッソ</th>
+                      <td>300円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>カプチーノ</th>
+                      <td>430円（税別）</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+            </div>
+          </div>
+          <!-- パネル02 -->
+          <div class="tab-pane fade border border-top-0" id="panel-menu02" role="tabpanel" aria-labelledby="tab-menu02">
+            <div class="row p-3">
+              <div class="col-md-7 order-md-2">
+                <h4>MORNNING</h4>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <th>トーストセット</th>
+                      <td>450円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>トーストゆで卵セット</th>
+                      <td>500円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>フレンチトーストセット</th>
+                      <td>600円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>野菜たっぷりスープセット</th>
+                      <td>650円（税別）</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-5">
+                <img src="img/morning.jpg" alt="モーニング" class="img-fluid"> </div>
+            </div>
+          </div>
+          <!-- パネル03 -->
+          <div class="tab-pane fade border border-top-0" id="panel-menu03" role="tabpanel" aria-labelledby="tab-menu03">
+            <div class="row p-3">
+              <div class="col-md-7 order-md-2">
+                <h4>LUNCH</h4>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <th>ワンプレートランチ</th>
+                      <td>1,000円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>Mixサンド</th>
+                      <td>650円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>ハンバーグサンド</th>
+                      <td>750円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>野菜たっぷりスープ</th>
+                      <td>650円（税別）</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-5">
+                <img src="img/lunch.jpg" alt="ランチ" class="img-fluid"> </div>
+            </div>
+          </div>
+          <!-- パネル04 -->
+          <div class="tab-pane fade border border-top-0" id="panel-menu04" role="tabpanel" aria-labelledby="tab-menu04">
+            <div class="row p-3">
+              <div class="col-md-7 order-md-2">
+                <h4>CAKE</h4>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <th>シフォンケーキ</th>
+                      <td>400円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>チーズケーキ</th>
+                      <td>350円（税別）</td>
+                    </tr>
+                    <tr>
+                      <th>本日のケーキ</th>
+                      <td>400円（税別）～</td>
+                    </tr>
+                    <tr>
+                      <th>季節のパウンドケーキ</th>
+                      <td>400円（税別）～</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-5">
+                <img src="img/cake.jpg" alt="ケーキ" class="img-fluid"> </div>
+            </div>
+          </div>
+        </div>
+        <!-- /パネル -->
+      </div>
+    </section>
+  </div>
+  <!-- /コンテンツ03 -->
+  <!-- コンテンツ04 -->
+	<input type="checkbox" checked data-toggle="toggle">
+  <div class="py-4 bg-light">
+    <section id="coupon">
+      <div class="container">
+        <h3 class="text-center mb-3">Coupon</h3>
+        <div class="card text-center text-dark w-75 mx-auto">
+          <div class="card-header bg-success text-white"> Mr. M COFFEE ランチクーポン </div>
+          <div class="card-body">
+            <h5 class="card-title">食後のコーヒープラス100円にてご提供</h5>
+            <p class="card-text text-justify">ワンプレートランチ（限定数20食）ご注文のお客様に、プラス100円で食後のコーヒーをご提供。お会計の際に、このクーポン画面をスタッフに見せてください。</p>
+          </div>
+          <div class="card-footer bg-success text-white"> クーポンコード：HAPPYLUNCH </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /コンテンツ04 -->
+  <!-- コンテンツ05 --><!-- /コンテンツ05 -->
+</main>
+<!-- /メイン -->
+<!-- フッター -->
+<footer class="py-4 bg-danger text-light">
+  <div class="container text-center">
+    <!-- ナビゲーション --><!-- /ナビゲーション -->
+    <p>
+      <small>Copyright &copy;2018 uRL, All Rights Reserved.</small>
+    </p>
+  </div>
+</footer>
+<!-- /フッター -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
