@@ -16,7 +16,39 @@
   </div>
 </header>
 <!-- /ヘッダー -->
-<!-- ナビゲーションバー --><!-- /ナビゲーションバー -->
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <!-- サブコンポーネント -->
+    <!-- ブランド -->
+    <a class="navbar-brand" href="index.html">ユーザー選択</a>
+    <!-- 切替ボタン -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <!-- ナビゲーション -->
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <!-- ナビゲーションメニュー -->
+      <!-- 左側メニュー：トップページの各コンテンツへのリンク -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link">母 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">父</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">兄</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">妹</a>
+        </li>
+        <!-- ドロップダウン -->
+      </ul>
+      <!-- /ナビゲーションメニュー -->
+    </div>
+    <!-- /サブコンポーネント -->
+  </div>
+</nav>
+<!-- /ナビゲーションバー -->
 <!-- メイン -->
 <main>
   <!-- メインビジュアル --><!-- / メインビジュアル -->
@@ -26,9 +58,7 @@
   <div class="py-4">
     <section id="menu">
       <div class="container">
-        <h3 class="mb-3">Menu</h3>
-        <p>カフェ Mr. M COFFEEのメニューです。掲載していない季節限定メニューはMr. M COFFEEの
-          <a href="#">ブログ</a>にて紹介しています。</p>
+        <h3 class="mb-3">タスク一覧</h3>
         <!-- タブ型ナビゲーション -->
         <div class="nav nav-tabs" id="tab-menus" role="tablist">
           <!-- タブ01 -->
@@ -43,33 +73,35 @@
           <div class="tab-pane fade show active border border-top-0" id="panel-menu01" role="tabpanel" aria-labelledby="tab-menu01">
             <div class="row p-3">
               <div class="col-md-7 order-md-2">
-                <h4>COFFEE</h4>
                 <table class="table table-striped">
                   <tbody>
                     <tr>
-                      <th>M ブレンド</th>
-                      <td>390円（税別）</td>
+                      <th>チェック</th>
+				　 　　<th>項目</th>
+				　 　　<th>期限</th>
+                      <th>実施者</th>
                     </tr>
                     <tr>
-                      <th>アイスコーヒー</th>
-                      <td>430円（税別）</td>
+				　 　　<td>o</td>
+                      <td>洗濯物を集める</td>
+			          <td>xx/xx/xx</td>
+                      <td>母</td>
                     </tr>
                     <tr>
-                      <th>ブラジルシングル</th>
-                      <td>430円（税別）</td>
+				　 　　<td>o</td>
+                      <td>洗濯物を集める</td>
+			          <td>xx/xx/xx</td>
+                      <td>母</td>
                     </tr>
                     <tr>
-                      <th>エスプレッソ</th>
-                      <td>300円（税別）</td>
-                    </tr>
-                    <tr>
-                      <th>カプチーノ</th>
-                      <td>430円（税別）</td>
+				　 　　<td>o</td>
+                      <td>洗濯物を集める</td>
+			          <td>xx/xx/xx</td>
+                      <td>母</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              
             </div>
           </div>
           <!-- パネル02 -->
