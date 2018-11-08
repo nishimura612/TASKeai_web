@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>users_graph</title>
+	<title>JavaScriptの練習</title>
 </head>
 <body>
 	<!--webの場合					
