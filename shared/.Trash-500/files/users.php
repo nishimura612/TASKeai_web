@@ -19,7 +19,7 @@
 	";
 
 	foreach ( $sql->fetchAll () as $row ) {
-		print"<font size=\"6\"color=\"#333631\"><center>${row['uname']}<center></font>";
+		print"<h2>${row['uname']}<h2>";
 		print"<canvas id=\"myChart${row['uid']}\"></canvas>
 			<script>
 			var ctx = document.getElementById(\"myChart${row['uid']}\").getContext('2d');
@@ -54,8 +54,9 @@
     }]
   }
 });
-	</script>
-	<br><br>";
+
+
+	</script>";
 	}
 ?>
 </body>
