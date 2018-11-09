@@ -12,7 +12,7 @@
 <!-- ヘッダー -->
 <header class="py-2">
   <div class="container text-center">
-    <h1><a href="index.html"><img src="img/logo.png" alt="TASKeai" height="100"></a></h1>
+    <h1><a href="index.php"><img src="img/logo.png" alt="TASKeai" height="100"></a></h1>
   </div>
 </header>
 <!-- /ヘッダー -->
@@ -58,7 +58,7 @@
   <div class="py-4">
     <section id="menu">
       <div class="container">
-        <h3 class="mb-3">タスク一覧</h3>
+        <h3 class="mb-3">タスク</h3>
         <!-- タブ型ナビゲーション -->
         <div class="nav nav-tabs" id="tab-menus" role="tablist">
           <!-- タブ01 -->
@@ -78,32 +78,41 @@
         <button type="button" class="btn btn-primary rounded-circle p-0" style="width:4rem;height:4rem;">task＋</button>
                     <tr>
                       <th>チェック</th>
-				　 　　        <th>項目</th>
-				　 　        　<th>期限</th>
+				　 　 <th>項目</th>
+				　 　 <th>期限</th>
                       <th>実施者</th>
+                      <th>実行中/完了</th>
                     </tr>
-                    <tr>
-                      <!--代替え200p-->
-				　 　　<td><div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck1">
-          <label class="custom-control-label" for="customCheck1">　</label>
-        </div></td>
-                      <td>洗濯物を集める</td>
-			          <td>xx/xx/xx</td>
-                      <td>母</td>
-                    </tr>
-                    <tr>
-				　 　　<td>o</td>
-                      <td>洗濯物を集める</td>
-			          <td>xx/xx/xx</td>
-                      <td>母</td>
-                    </tr>
-                    <tr>
-				　 　　<td>o</td>
-                      <td>洗濯物を集める</td>
-			          <td>xx/xx/xx</td>
-                      <td>母</td>
-                    </tr>
+                    
+<?php
+			$pdo = new PDO ( 'mysql:host=localhost;dbname=taskeai;charset=utf8', 'root', 'vagrant' );
+			$sql = $pdo->query ( 'select * from taskeai.user join taskeai.task using(uid)' );
+
+			foreach ( $sql->fetchAll () as $row ) {
+			    print("<tr>
+				　 　　<td><div class=\"custom-control custom-checkbox text-center\">
+                        <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck${row['tid']}\">
+                        <label class=\"custom-control-label\" for=\"customCheck${row['tid']}\">　</label>
+                        </div></td>");
+    			
+    		
+    			print("<td> ${row['tname']} </td>");
+    		
+    			print("<td> ${row['timelimit']} </td>");
+
+    			print("<td> ${row['uname']} </td>");
+
+                $done = $row['done'];
+                if(${done} != ""  and ${done} != "0000-00-00 00:00:00"){
+                //if(true){
+    			    print("<td> 完了 </td>");
+    			}else{
+                    print("<td> 実行中 </td>");
+    			}
+    			print('</tr>');
+			}
+
+?>
                   </tbody>
                 </table>
               </div>
@@ -113,30 +122,121 @@
           <div class="tab-pane fade border border-top-0" id="panel-menu02" role="tabpanel" aria-labelledby="tab-menu02">
             <div class="row p-3">
               <div class="col-md-7 order-md-2">
-                <h4>MORNNING</h4>
-                <table class="table table-striped">
-                  <tbody>
-                    <tr>
-                      <th>トーストセット</th>
-                      <td>450円（税別）</td>
-                    </tr>
-                    <tr>
-                      <th>トーストゆで卵セット</th>
-                      <td>500円（税別）</td>
-                    </tr>
-                    <tr>
-                      <th>フレンチトーストセット</th>
-                      <td>600円（税別）</td>
-                    </tr>
-                    <tr>
-                      <th>野菜たっぷりスープセット</th>
-                      <td>650円（税別）</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <h4>実行中</h4>
+                <?php
+	                //$pdo = new PDO ( 'mysql:host=localhost;dbname=taskeai;charset=utf8', 'root', 'vagrant' );
+	                $sql = $pdo->query ( 'select * from taskeai.user' );
+            
+                    print" 		
+	                    <script src=\"js/Chart_min.js\"></script>
+	                        <canvas id=\"all_no_done\"></canvas>
+	                    <script>
+		                var ctx = document.getElementById(\"all_no_done\").getContext('2d');
+		                var myChart = new Chart(ctx, {
+		                type: 'doughnut',
+		                    data: {
+			                labels: [ ";
+//人物登録
+	foreach ( $sql->fetchAll () as $row ) {
+		print("\"${row['uname']}\",");
+	}
+			
+			print"],
+			datasets: [{
+			//色生成
+			backgroundColor: [
+ 			\"#2ecc71\",
+			\"#3498db\",
+			\"#95a5a6\",
+			\"#9b59b6\",
+			\"#f1c40f\",
+			\"#e74c3c\",
+			\"#34495e\"
+			],
+		data: [	";
+
+	//データ作成
+	$sql = $pdo->query ( 'select * from taskeai.user' );
+	foreach ( $sql->fetchAll () as $row ) {
+	$sql2= $pdo->query ( "select count(*) as num from taskeai.task where uid = ${row['uid']} " );
+		$allnum;
+		foreach ( $sql2->fetchAll () as $row2 ) {
+			$allnum = $row2['num'];
+		}
+
+		$sql2= $pdo->query ( "select count(*) as num from taskeai.task where uid = ${row['uid']} and (done != \"0000-00-00 00:00:00\" and done is  not null)" );
+		$donenum;
+		foreach ( $sql2->fetchAll () as $row2 ) {
+			$donenum = $row2['num'];
+		}
+		print "${allnum}-${donenum},";
+	}
+
+	print"
+		]
+    }]
+  }
+});
+	</script>";
+
+?>
+
+<h4>完了</h4>
+<?php
+	//$sql = $pdo->query ( 'select * from taskeai.user join taskeai.task using(uid)' );
+	
+	$sql = $pdo->query ( 'select * from taskeai.user' );
+
+	print" <!--ファイルからの場合-->		
+	<script src=\"Chart_min.js\"></script>
+	
+	<canvas id=\"all_done\"></canvas>
+	<script>
+		var ctx = document.getElementById(\"all_done\").getContext('2d');
+		var myChart = new Chart(ctx, {
+		type: 'doughnut',
+		data: {
+			labels: [ ";
+	//人物登録
+	foreach ( $sql->fetchAll () as $row ) {
+		print("\"${row['uname']}\",");
+	}
+			
+			print"],
+			datasets: [{
+			//色生成
+			backgroundColor: [
+ 			\"#2ecc71\",
+			\"#3498db\",
+			\"#95a5a6\",
+			\"#9b59b6\",
+			\"#f1c40f\",
+			\"#e74c3c\",
+			\"#34495e\"
+			],
+		data: [	";
+
+	//データ作成
+	$sql = $pdo->query ( 'select * from taskeai.user' );
+	foreach ( $sql->fetchAll () as $row ) {
+	$sql2= $pdo->query ( "select count(*) as num from taskeai.task where uid = ${row['uid']} and (done != \"0000-00-00 00:00:00\" and done is  not null)" );
+		$donenum;
+		foreach ( $sql2->fetchAll () as $row2 ) {
+			$donenum = $row2['num'];
+		}
+		print "${donenum},";
+	}
+
+	print"
+		]
+    }]
+  }
+});
+	</script>";
+
+?>
+                
               </div>
-              <div class="col-md-5">
-                <img src="img/morning.jpg" alt="モーニング" class="img-fluid"> </div>
             </div>
           </div>
           
