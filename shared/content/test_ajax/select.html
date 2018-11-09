@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<script>
+		function selectAll() {
+                //ここからajaxの処理です。          
+                $.ajax({
+                        //POST通信
+                        type: "POST",
+                        //ここでデータの送信先URLを指定します。
+                        url: "select_all.php",
+                        //処理が成功したら
+                        success : function(data, dataType) {
+                            //HTMLファイル内の該当箇所にレスポンスデータを追加します。
+                            $('#res').html(data);
+                            setTimeout( selectAll() , 5000 );
+                        },
+                        //処理がエラーであれば
+                        error : function() {
+                            alert('通信エラー');
+                        }
+                 });
+                 
+                 //submitによる画面リロードを防いでいます。
+                 return false;
+    	}
+    	selectAll();
+	</script>
+</head>
+<body>
+	<div id="res"></div>
+</body>
+</html>
