@@ -20,8 +20,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container">
     <!-- サブコンポーネント -->
-    <!-- ブランド -->
-    <a class="navbar-brand" href="index.html">ユーザー選択</a>
     <!-- 切替ボタン -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <!-- ナビゲーション -->
@@ -29,17 +27,14 @@
       <!-- ナビゲーションメニュー -->
       <!-- 左側メニュー：トップページの各コンテンツへのリンク -->
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link">母 <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Top</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">父</a>
+          <a class="nav-link" href="insert_user_sql.php">タスク登録</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">兄</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">妹</a>
+          <a class="nav-link" href="insert_user.php">ユーザー登録</a>
         </li>
         <!-- ドロップダウン -->
       </ul>
