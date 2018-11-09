@@ -70,24 +70,40 @@
               <div class="col-md-7 order-md-2">
                 <table class="table table-striped">
                   <tbody>
-        <button type="button" class="btn btn-primary rounded-circle p-0" style="width:4rem;height:4rem;">task＋</button>
+                  <form class="form-inline" action = "update.php" method = "post">
+        <button type="submit" class="btn btn-primary rounded-circle p-0" style="width:4rem;height:4rem;">助ける</button>
+          <?php
+          $pdo = new PDO ( 'mysql:host=localhost;dbname=taskeai;charset=utf8', 'root', 'vagrant' );
+          $sql = $pdo->query ( 'select * from taskeai.user' );
+          print("<div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">");
+          foreach ( $sql->fetchAll () as $row ) {
+            $user = $row{'uname'};
+            $userid = $row{'uid'};
+            print("
+           <label class=\"btn btn-secondary \">
+            <input type=\"radio\" name=\"options\" id=\"option${userid}\" autocomplete=\"off\" value=\"${userid}\"> ${user} </label>
+            ");
+          }print("</div>")
+           ?>;
+<!--                                -->
                     <tr>
                       <th>チェック</th>
-				　 　 <th>項目</th>
-				　 　 <th>期限</th>
+				　             <th>項目</th>
+				　 　          <th>期限</th>
                       <th>実施者</th>
                       <th>実行中/完了</th>
                     </tr>
                     
 <?php
-			$pdo = new PDO ( 'mysql:host=localhost;dbname=taskeai;charset=utf8', 'root', 'vagrant' );
+			#$pdo = new PDO ( 'mysql:host=localhost;dbname=taskeai;charset=utf8', 'root', 'vagrant' );
 			$sql = $pdo->query ( 'select * from taskeai.user join taskeai.task using(uid)' );
 
 			foreach ( $sql->fetchAll () as $row ) {
+        $taskid = $row{'tid'};
 			    print("<tr>
 				　 　　<td><div class=\"custom-control custom-checkbox text-center\">
-                        <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck${row['tid']}\">
-                        <label class=\"custom-control-label\" for=\"customCheck${row['tid']}\">　</label>
+                        <input type=\"checkbox\" class=\"custom-control-input\" name=\"check[]\" id=\"customCheck${taskid}\">
+                        <label class=\"custom-control-label\" for=\"customCheck${taskid}\" value=\"${taskid}\">　</label>
                         </div></td>");
     			
     		
@@ -108,6 +124,7 @@
 			}
 
 ?>
+  </form>
                   </tbody>
                 </table>
               </div>
@@ -246,12 +263,12 @@
       <div class="container">
         <div class="card text-center text-dark w-75 mx-auto">
           <div class="card-body">
-            <h3 class="text-center mb-3">Light</h3>
+            <h1 class="text-center mb-3">Light</h1>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-secondary active">
+                  <label class="btn btn-secondary active btn-lg">
                     <input type="radio" name="options22" id="option1" autocomplete="off" checked> ON
                   </label>
-                  <label class="btn btn-secondary">
+                  <label class="btn btn-secondary btn-lg">
                     <input type="radio" name="options" id="option2" autocomplete="off"> OFF
                   </label>
                 </div>
