@@ -246,12 +246,12 @@
       <div class="container">
         <div class="card text-center text-dark w-75 mx-auto">
           <div class="card-body">
-            <h3 class="text-center mb-3">Light</h3>
+            <h1 class="text-center mb-3">Light</h1>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-secondary active">
+                  <label class="btn btn-secondary active btn-lg">
                     <input type="radio" name="options22" id="option1" autocomplete="off" checked> ON
                   </label>
-                  <label class="btn btn-secondary">
+                  <label class="btn btn-secondary btn-lg">
                     <input type="radio" name="options" id="option2" autocomplete="off"> OFF
                   </label>
                 </div>
