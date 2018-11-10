@@ -1,5 +1,6 @@
 <?php
-
+	header('Access-Control-Allow-Origin: http://192.168.33.1:8081');
+	header('Access-Control-Allow-Origin: http://192.168.56.1:8081');
 	$gpioPortNum = '4';
 	$gpioPort = 'gpio' . $gpioPortNum;
 
