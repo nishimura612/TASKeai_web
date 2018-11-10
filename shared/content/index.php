@@ -100,6 +100,29 @@
             // submit による画面リロード防止
             return false;
        }
+
+       function userChange(tid){
+
+            var num = document.getElementById("form"+tid).user.selectedIndex;
+            var uid = document.getElementById("form"+tid).user.options[num].value;
+            
+            $.ajax({
+                type: "POST",   // 通信の種類
+                url: "user_update.php", // POSTデータを送るURL
+                data: { // POSTデータの中身
+                    "tid": tid,
+                    "uid": uid
+                },
+                success: function(j_data){
+                    // 通信が成功した場合の処理
+                },
+                error: function(){
+                    alert("通信エラー");
+                }
+            });
+            // submit による画面リロード防止
+            return false;
+       }
 </script>
 	
 <!-- ヘッダー -->
