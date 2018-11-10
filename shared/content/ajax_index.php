@@ -280,10 +280,11 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
+  rpiAddress = "http://192.168.0.8/blinklight.php" // raspberry pi のipを指定
     $("#light-on").click(function(){
       $.ajax({
         type: "POST",
-        url: "http://192.168.0.8/blinklight.php", // raspberry pi のipを指定
+        url: rpiAddress, 
         data: {
           "stateLight": "ON"
         },
@@ -298,7 +299,7 @@ $(function() {
     $("#light-off").click(function(){
       $.ajax({
         type: "POST",
-        url: "http://192.168.0.8/blinklight.php", // raspberry pi のipを指定
+        url: rpiAddress,
         data: {
           "stateLight": "OFF"
         },
