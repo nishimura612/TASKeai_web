@@ -81,6 +81,25 @@
        selectAll();
        selectNoDone();
        selectDone();
+
+       function done_update(tid){
+       
+            $.ajax({
+                type: "POST",   // 通信の種類
+                url: "done_update.php", // POSTデータを送るURL
+                data: { // POSTデータの中身
+                    "tid": tid
+                },
+                success: function(j_data){
+                    // 通信が成功した場合の処理
+                },
+                error: function(){
+                    alert("通信エラー");
+                }
+            });
+            // submit による画面リロード防止
+            return false;
+       }
 </script>
 	
 <!-- ヘッダー -->
@@ -141,7 +160,7 @@
           <!-- パネル01 -->
           <div class="tab-pane fade show active border border-top-0" id="panel-menu01" role="tabpanel" aria-labelledby="tab-menu01">
             <div class="row p-3">
-              <div class="col-md-7 order-md-2">
+              <div class="order-md-2">
                 <table class="table table-striped" id="select_all">
                   
                 </table>

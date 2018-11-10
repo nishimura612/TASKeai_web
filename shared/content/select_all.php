@@ -12,6 +12,7 @@ print("
 		<th>期限</th>
         <th>実施者</th>
         <th>実行中/完了</th>
+        <th>完了日時</th>
         </tr>");
                     
 foreach ( $sql->fetchAll () as $row ) {
@@ -27,12 +28,15 @@ foreach ( $sql->fetchAll () as $row ) {
 
   print("<td> ${row['uname']} </td>");
 
+  $tid =  $row['tid'];
   $done = $row['done'];
   if(${done} != ""  and ${done} != "0000-00-00 00:00:00"){
     //if(true){
     print("<td> 完了 </td>");
+    print("<td> ${done} </td>");
   }else{
     print("<td> 実行中 </td>");
+    print("<td> <input type=\"button\" value=\"完了\" onclick=\"done_update(${tid})\"/> </td>");
   }
   print('</tr>');
 }
