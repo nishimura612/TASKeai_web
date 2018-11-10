@@ -6,7 +6,7 @@
 	$sql = $pdo->query ( 'select * from taskeai.user' );
 
 	print" <!--ファイルからの場合-->		
-	<script src=\"Chart_min.js\"></script>
+	<script src=\"js/Chart_min.js\"></script>
 	
 	<canvas id=\"canvas_all_done\"></canvas>
 	<script>
