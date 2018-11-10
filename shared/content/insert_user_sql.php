@@ -13,13 +13,3 @@ $sql = $pdo->query("insert into taskeai.user(uid,uname) values(${uid}, \"${uname
 
 ?>
 
-<html>
-<head></head>
-<body>
-
-<form action="insert_user.php">
-  <input type="submit" value="戻る" />
-</form>
-
-</body>
-</html>

@@ -31,7 +31,7 @@
           <a class="nav-link" href="index.php">Top</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="insert_user_sql.php">タスク登録</a>
+          <a class="nav-link" href="insert_task.php">タスク登録</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="insert_user.php">ユーザー登録</a>
