@@ -15,7 +15,7 @@ if($tid == ""){
 
 $sql = $pdo->query("select uid from taskeai.user where uname = \"${uname}\" ");
 $uid = intval($sql->fetchColumn());
-    
+ 
 if($done == ""){
     $sql = $pdo->query("insert into taskeai.task(tid,tname,uid,timelimit) values(${tid},\"${tname}\",${uid},\"${timelimit}\")");
 }else{
