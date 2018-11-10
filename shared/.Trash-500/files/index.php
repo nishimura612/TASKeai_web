@@ -81,7 +81,7 @@
             $userid = $row{'uid'};
             print("
            <label class=\"btn btn-secondary \">
-            <input type=\"radio\" name=\"user\" id=\"option${userid}\" autocomplete=\"off\" value=\"${userid}\"> ${user} </label>
+            <input type=\"radio\" name=\"options\" id=\"option${userid}\" autocomplete=\"off\" value=\"${userid}\"> ${user} </label>
             ");
           }print("</div>")
            ?>;
@@ -102,8 +102,8 @@
         $taskid = $row{'tid'};
 			    print("<tr>
 				　 　　<td><div class=\"custom-control custom-checkbox text-center\">
-                        <input type=\"checkbox\" class=\"custom-control-input\" id=\"customCheck${taskid}\" name=\"check[]\" value=\"${taskid}\">
-                        <label class=\"custom-control-label\" for=\"customCheck${taskid}\" >${taskid}</label>
+                        <input type=\"checkbox\" class=\"custom-control-input\" name=\"check[]\" id=\"customCheck${taskid}\">
+                        <label class=\"custom-control-label\" for=\"customCheck${taskid}\" value=\"${taskid}\">　</label>
                         </div></td>");
     			
     		
