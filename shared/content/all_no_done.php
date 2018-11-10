@@ -50,6 +50,9 @@ foreach ( $sql->fetchAll () as $row ) {
 print"
 		]
     }]
+  },
+  options: {
+	animation:false
   }
 });
 	</script>";

@@ -48,6 +48,9 @@
 	print"
 		]
     }]
+  },
+  options: {
+	animation:false
   }
 });
 	</script>";
