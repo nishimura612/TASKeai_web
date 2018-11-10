@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UFT-8">
+</head>
+<body>
+    <h1>user</h1>
+    <form action = "insert_user.php"method = "post">
+        <p>uname</p>
+        <input id="uname" type = "text" name ="uname"><br/>
+        <button id="submit-user" type="button" name="submit-user" value="">
+            <font size="4">送信</font>
+        </button>
+    </form>
+
+    <h1>task</h1>
+    <form action = "insert_task.php"method = "post">
+        <p>tname</p>
+        <input id="tname" type = "text" name ="tname"><br/>
+        <p>uid</p>
+        <input id="uid" type = "text" name ="uid"><br/>
+        <p>done</p>
+        <input id="done" type = "text" name ="done"><br/>
+        <p>timelimit</p>
+        <input id="timelimit" type = "text" name ="timelimit"><br/>
+        <button id="submit-task" type="button" name="submit-task" value="">
+            <font size="4">送信</font>
+        </button>
+    </form>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+    $("#submit-user").click(function(){
+        uname = $("#uname").val();
+        $.ajax({
+            type: "POST",   // 通信の種類
+            url: "insert_user.php", // POSTデータを送るURL
+            data: { // POSTデータの中身
+                "uname": uname
+            },
+            success: function(j_data){
+                // 通信が成功した場合の処理
+            },
+            error: function(){
+                alert("通信エラー")
+            }
+        });
+        // submit による画面リロード防止
+        return false;
+    });
+
+    $("#submit-task").click(function(){
+        tname = $("#tname").val();
+        uid = $("#uid").val();
+        done = $("#done").val();
+        timelimit = $("#timelimit").val();
+        $.ajax({
+            type: "POST",   // 通信の種類
+            url: "insert_task.php", // POSTデータを送るURL
+            data: { // POSTデータの中身
+                "tname": tname,
+                "uid": uid,
+                "done": done,
+                "timelimit": timelimit
+            },
+            success: function(j_data){
+                // 通信が成功した場合の処理．
+            },
+            error : function(){
+                alert("通信エラー");
+            }
+        });
+        // submit による画面リロード防止
+        return false;
+    });
+
+});
+</script>
+</html>
