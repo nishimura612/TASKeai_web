@@ -1,7 +1,6 @@
 ﻿<html>
 <head>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script>
 		function selectAll() {
                 //ここからajaxの処理です。          
@@ -14,7 +13,7 @@
                         success : function(data, dataType) {
                             //HTMLファイル内の該当箇所にレスポンスデータを追加します。
                             $('#res').html(data);
-                            setTimeout( selectAll() , 5000 );
+                            setTimeout( selectAll , 5000 );
                         },
                         //処理がエラーであれば
                         error : function() {
@@ -25,7 +24,7 @@
                  //submitによる画面リロードを防いでいます。
                  return false;
     	}
-    	selectAll();
+       selectAll();
 	</script>
 </head>
 <body>
