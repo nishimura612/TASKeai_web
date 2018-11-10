@@ -1,7 +1,35 @@
 <html>
-<form method = "POST" action="http://192.168.2.109/blinklight.php">
+<form method = "POST" action="http://192.168.0.8/blinklight.php">
 <input type="submit" name="stateLight" value="ON">
 <input type="submit" name="stateLight" value="OFF">
 <input type="submit" name="stateLight" value="INVERTED">
 </form>
+<button id="lightSwitch" type="button" name="lightSwitch" value="aaa">
+<font size="10">Switch</font>
+</button>
+
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+ 
+    $("#lightSwitch").click(function(){
+ 
+        $.ajax({
+            type: "POST",
+            url: "blinklight.php",
+            data: {
+                "stateLight": "INVERTED"
+            },
+            success: function(j_data){
+                // 処理を記述
+            },
+            error: function(){
+                alert("ライト操作エラー");
+            }
+        });
+ 
+    });
+ 
+});
+</script>
 </html>
