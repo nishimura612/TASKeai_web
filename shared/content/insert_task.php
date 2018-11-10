@@ -53,14 +53,19 @@
   <div class="py-4">
     <section id="menu">
       <div class="container">
-        <h3 class="mb-3">ユーザー登録</h3>
+        <h3 class="mb-3">タスク登録</h3>
 
-        
-        <p>ユーザ名</p>
+       
+        <p>タスク名</p>
+        <input id="tname" type = "text" name ="tname"><br/>
+        <p>ユーザー名</p>
         <input id="uname" type = "text" name ="uname"><br/>
-        <button id="submit-user" type="button" name="submit-user" value="">
+        <p>期限</p>
+        <input id="timelimit" type = "text" name ="timelimit"><br/>
+        <button id="submit-task" type="button" name="submit-task" value="">
             <font size="4">登録</font>
         </button>
+   
         <div id="res"></div>
           
       </div>
@@ -108,17 +113,23 @@
 <script type="text/javascript">
 $(function() {
 
-    $("#submit-user").click(function(){
+    $("#submit-task").click(function(){
+        tname = $("#tname").val();
         uname = $("#uname").val();
+        done = $("#done").val();
+        timelimit = $("#timelimit").val();
         $.ajax({
             type: "POST",   // 通信の種類
-            url: "insert_user_sql.php", // POSTデータを送るURL
+            url: "insert_task_sql.php", // POSTデータを送るURL
             data: { // POSTデータの中身
-                "uname": uname
+                "tname": tname,
+                "uname": uname,
+                "done": done,
+                "timelimit": timelimit
             },
             success: function(j_data){
                 // 通信が成功した場合の処理
-                $('#res').html("<p>"+ uname +"を追加しました<p>");
+                $('#res').html("<p>"+ tname +"を追加しました<p>");
             },
             error: function(){
                 //alert("通信エラー");
