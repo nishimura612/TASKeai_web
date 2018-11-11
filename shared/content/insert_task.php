@@ -55,10 +55,8 @@ a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
   <div class="py-4">
     <section id="menu">
       <div class="container">
-        <h3 class="mb-3">タスク登録</h3>
-
-       
-        <p>タスク名</p>
+        <!-- <h3 class="mb-3">タスク登録</h3> -->
+        <!-- <p>タスク名</p>
         <input id="tname" type = "text" name ="tname"><br/>
         <p>ユーザー名</p>
         <input id="uname" type = "text" name ="uname"><br/>
@@ -68,7 +66,34 @@ a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <font size="4">登録</font>
         </button>
    
-        <div id="res"></div>
+        <div id="res"></div> -->
+
+        <div class="col-sm-5 col-md-4">
+          <h3 class="mb-3">タスク登録</h3>
+
+          <label for="userName">タスク名</label>
+          <input type="text" class="form-control" id="tname" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid first tname is required.
+          </div>
+          <br>
+          <label for="userName">ユーザー名</label>
+          <input type="text" class="form-control" id="uname" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid first tname is required.
+          </div>
+          <br>
+          <label for="userName">期限</label>
+          <input type="text" class="form-control" id="timelimit" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid first tname is required.
+          </div>
+          <br>
+          <button type="button" class="btn btn-primary" id="submit-task">登録</button>
+          <br>
+          <br>
+          <div id="res"></div>
+        </div>
           
       </div>
     </section>
