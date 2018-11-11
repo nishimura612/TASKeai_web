@@ -17,7 +17,7 @@
 </header>
 <!-- /ヘッダー -->
 <!-- ナビゲーションバー -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
     <!-- サブコンポーネント -->
     <!-- 切替ボタン -->
