@@ -21,7 +21,8 @@
   <div class="container">
     <!-- サブコンポーネント -->
     <!-- 切替ボタン -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" ari
+a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <!-- ナビゲーション -->
     <div class="collapse navbar-collapse" id="navbar-content">
       <!-- ナビゲーションメニュー -->
@@ -44,6 +45,7 @@
   </div>
 </nav>
 <!-- /ナビゲーションバー -->
+
 <!-- メイン -->
 <main>
   <!-- メインビジュアル --><!-- / メインビジュアル -->
@@ -107,7 +109,6 @@
   </div>
 </footer>
 <!-- /フッター -->
-<script src="js/bootstrap.bundle.min.js"></script>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -141,5 +142,6 @@ $(function() {
     });
 });
 </script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
