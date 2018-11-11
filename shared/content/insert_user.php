@@ -17,7 +17,7 @@
 </header>
 <!-- /ヘッダー -->
 <!-- ナビゲーションバー -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
     <!-- サブコンポーネント -->
     <!-- 切替ボタン -->
@@ -56,8 +56,17 @@
         <h3 class="mb-3">ユーザー登録</h3>
 
         
-        <p>ユーザ名</p>
-        <input id="uname" type = "text" name ="uname"><br/>
+        <!-- <p>ユーザ名</p>
+        <input id="uname" type = "text" name ="uname"><br/> -->
+
+	      <div class="col-sm-5 col-md-4">
+          <label for="userName">User name</label>
+          <input type="text" class="form-control" id="uname" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+
         <button id="submit-user" type="button" name="submit-user" value="">
             <font size="4">登録</font>
         </button>
