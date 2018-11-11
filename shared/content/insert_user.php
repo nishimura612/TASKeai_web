@@ -12,7 +12,7 @@
 <!-- ヘッダー -->
 <header class="py-2">
   <div class="container text-center">
-    <h1><a href="index.php"><img src="img/logo.png" alt="TASKeai" height="100"></a></h1>
+    <h1><a href="index.php"><img src="img/logo.png" alt="TASKeai" height="100" ></a></h1>
   </div>
 </header>
 <!-- /ヘッダー -->
@@ -53,25 +53,21 @@
   <div class="py-4">
     <section id="menu">
       <div class="container">
-        <h3 class="mb-3">ユーザー登録</h3>
-
-        
-        <!-- <p>ユーザ名</p>
-        <input id="uname" type = "text" name ="uname"><br/> -->
-
 	      <div class="col-sm-5 col-md-4">
-          <label for="userName">User name</label>
+          <h3 class="mb-3">ユーザ登録</h3>
+
+          <label for="userName">ユーザー名</label>
           <input type="text" class="form-control" id="uname" placeholder="" value="" required="">
           <div class="invalid-feedback">
             Valid first name is required.
           </div>
+          <br>
+          <button type="button" class="btn btn-primary" id="submit-user">登録</button>
+          <br>
+          <br>
+          <div id="res"></div>
         </div>
 
-        <button id="submit-user" type="button" name="submit-user" value="">
-            <font size="4">登録</font>
-        </button>
-        <div id="res"></div>
-          
       </div>
     </section>
   </div>
