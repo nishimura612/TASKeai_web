@@ -68,7 +68,7 @@ a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
    
         <div id="res"></div> -->
 
-        <div class="col-sm-5 col-md-4">
+        <div class="col-sm-6 col-md-6">
           <h3 class="mb-3">タスク登録</h3>
 
           <label for="userName">タスク名</label>
@@ -84,7 +84,7 @@ a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
           </div>
           <br>
           <label for="userName">期限</label>
-          <input type="text" class="form-control" id="timelimit" placeholder="" value="" required="">
+          <input type="text" class="form-control" id="timelimit" placeholder="例:2018-11-13 10:00:00" value="" required="">
           <div class="invalid-feedback">
             Valid first tname is required.
           </div>
