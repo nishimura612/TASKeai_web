@@ -79,9 +79,33 @@
                  //submitによる画面リロードを防いでいます。
                  return false;
     	}
+
+    	function selectUser() {
+                //ここからajaxの処理です。          
+                $.ajax({
+                        //POST通信
+                        type: "POST",
+                        //ここでデータの送信先URLを指定します。
+                        url: "all_user.php",
+                        //処理が成功したら
+                        success : function(data, dataType) {
+                            //HTMLファイル内の該当箇所にレスポンスデータを追加します。
+                            $('#all_user').html(data);
+                            setTimeout( selectUser , 5000 );
+                        },
+                        //処理がエラーであれば
+                        error : function() {
+                            alert('通信エラー');
+                        }
+                 });
+                 
+                 //submitによる画面リロードを防いでいます。
+                 return false;
+    	}
        selectAll();
        selectNoDone();
        selectDone();
+       selectUser();
 
        function done_update(tid){
        
@@ -195,14 +219,17 @@
           <div class="tab-pane fade border border-top-0" id="panel-menu02" role="tabpanel" aria-labelledby="tab-menu02">
             <div class="row p-3">
               <div class="col-md-7 order-md-2">
-              <h4>実行中</h4>
               
+              <font size="6"color="#333631"><center>実行中<center></font>
               <div id="all_no_done"></div>
-
-              <h4>完了</h4>
-
+              <br>
+              
+              <font size="6"color="#333631"><center>完了<center></font>
               <div id="all_done"></div>
- 
+              <br><br>
+                
+              <div id="all_user"></div>
+                
               </div>
             </div>
           </div>
