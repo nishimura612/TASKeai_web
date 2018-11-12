@@ -1,7 +1,5 @@
 <?php
     $pdo = new PDO ( 'mysql:host=localhost;dbname=taskeai;charset=utf8', 'root', 'vagrant' );
-
-	$sql = $pdo->query ( 'select * from taskeai.user join taskeai.task using(uid)' );
 	
 	$sql = $pdo->query ( 'select * from taskeai.user' );
 
