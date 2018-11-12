@@ -17,11 +17,12 @@
 </header>
 <!-- /ヘッダー -->
 <!-- ナビゲーションバー -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
     <!-- サブコンポーネント -->
     <!-- 切替ボタン -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" ari
+a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <!-- ナビゲーション -->
     <div class="collapse navbar-collapse" id="navbar-content">
       <!-- ナビゲーションメニュー -->
@@ -44,6 +45,7 @@
   </div>
 </nav>
 <!-- /ナビゲーションバー -->
+
 <!-- メイン -->
 <main>
   <!-- メインビジュアル --><!-- / メインビジュアル -->
@@ -53,10 +55,8 @@
   <div class="py-4">
     <section id="menu">
       <div class="container">
-        <h3 class="mb-3">タスク登録</h3>
-
-       
-        <p>タスク名</p>
+        <!-- <h3 class="mb-3">タスク登録</h3> -->
+        <!-- <p>タスク名</p>
         <input id="tname" type = "text" name ="tname"><br/>
         <p>ユーザー名</p>
         <input id="uname" type = "text" name ="uname"><br/>
@@ -66,7 +66,34 @@
             <font size="4">登録</font>
         </button>
    
-        <div id="res"></div>
+        <div id="res"></div> -->
+
+        <div class="col-sm-6 col-md-6">
+          <h3 class="mb-3">タスク登録</h3>
+
+          <label for="userName">タスク名</label>
+          <input type="text" class="form-control" id="tname" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid first tname is required.
+          </div>
+          <br>
+          <label for="userName">ユーザー名</label>
+          <input type="text" class="form-control" id="uname" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid first tname is required.
+          </div>
+          <br>
+          <label for="userName">期限</label>
+          <input type="text" class="form-control" id="timelimit" placeholder="例:2018-11-13 10:00:00" value="" required="">
+          <div class="invalid-feedback">
+            Valid first tname is required.
+          </div>
+          <br>
+          <button type="button" class="btn btn-primary" id="submit-task">登録</button>
+          <br>
+          <br>
+          <div id="res"></div>
+        </div>
           
       </div>
     </section>
@@ -107,7 +134,6 @@
   </div>
 </footer>
 <!-- /フッター -->
-<script src="js/bootstrap.bundle.min.js"></script>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -141,5 +167,6 @@ $(function() {
     });
 });
 </script>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
