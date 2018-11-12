@@ -8,6 +8,7 @@
 	";
 
 	foreach ( $sql->fetchAll () as $row ) {
+	    print("<hr size=\"8\" color=\"#333333\">");
 		print"<font size=\"6\"color=\"#333631\"><center>${row['uname']}<center></font>";
 		print"<canvas id=\"myChart${row['uid']}\"></canvas><br>
 			<script>
