@@ -105,12 +105,12 @@ a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
       <div class="container">
         <div class="card text-center text-dark w-75 mx-auto">
           <div class="card-body">
-            <h3 class="text-center mb-3">Light</h3>
+            <h1 class="text-center mb-3">Light</h1>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                  <label class="btn btn-secondary active">
+                  <label id="light-on" class="btn btn-secondary btn-lg active">
                     <input type="radio" name="options22" id="option1" autocomplete="off" checked> ON
                   </label>
-                  <label class="btn btn-secondary">
+                  <label id="light-off" class="btn btn-secondary btn-lg">
                     <input type="radio" name="options" id="option2" autocomplete="off"> OFF
                   </label>
                 </div>
@@ -136,6 +136,7 @@ a-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 <!-- /フッター -->
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/light-control.js"></script>
 <script type="text/javascript">
 $(function() {
 
