@@ -224,6 +224,8 @@
               <div id="all_no_done"></div>
               <br>
               
+              <hr size=\"8\" color=\"#333333\">
+              
               <font size="6"color="#333631"><center>完了<center></font>
               <div id="all_done"></div>
               <br><br>
