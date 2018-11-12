@@ -40,6 +40,7 @@
 		print "${donenum},${allnum}- ${donenum}";
 
 	$par = round($donenum/$allnum * 100);
+
 	print"
 		]
     }]
@@ -49,7 +50,15 @@
   }
 });
 	</script>
+	<h4>
 	達成度：${par}%
-	<br><br>";
+	";
+
+    if($par == 100){
+        print"<font color=\"red\">  Completed!</font>";
+    }
+	print"
+	</h4>
+	<br>";
 	}
 ?>
