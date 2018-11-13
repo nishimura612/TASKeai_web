@@ -28,7 +28,8 @@
                         },
                         //処理がエラーであれば
                         error : function() {
-                            alert('通信エラー');
+                            //alert('通信エラー');
+                            setTimeout( selectAll , 5000 );
                         }
                  });
                  
@@ -50,7 +51,8 @@
                         },
                         //処理がエラーであれば
                         error : function() {
-                            alert('通信エラー');
+                            //alert('通信エラー');
+                            setTimeout( selectNoDone , 5000 );
                         }
                  });
                  
@@ -72,7 +74,8 @@
                         },
                         //処理がエラーであれば
                         error : function() {
-                            alert('通信エラー');
+                            //alert('通信エラー');
+                            setTimeout( selectDone , 5000 );
                         }
                  });
                  
@@ -95,7 +98,8 @@
                         },
                         //処理がエラーであれば
                         error : function() {
-                            alert('通信エラー');
+                            //alert('通信エラー');
+                            setTimeout( selectUser , 5000 );
                         }
                  });
                  
